@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo học tập - LMS Uni</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <h1>LMS Uni</h1>
+        </div>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm kiếm khóa học, tài liệu...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        
+        <div class="user-actions">
+            <button class="notification-btn">
+                <i class="fas fa-bell"></i>
+                <span class="badge">3</span>
+            </button>
+            <div class="notification-dropdown">
+                <ul>
+                    <li>
+                        <span class="dropdown-user-icon"><i class="fas fa-user"></i></span>
+                        <div class="dropdown-content">
+                            <strong>Lịch thi cuối kỳ đã cập nhật</strong>
+                            <span>10 phút trước</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="dropdown-user-icon"><i class="fas fa-user"></i></span>
+                        <div class="dropdown-content">
+                            <strong>Thay đổi phòng học CS101</strong>
+                            <span>Hôm qua</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="user-profile">
+                <i class="fas fa-user"></i>
+                <div class="user-dropdown">
+                    <ul>
+                        <li>
+                            <a href="login.html" class="user-dropdown-login"><i class="fas fa-lock"></i> Đăng nhập</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> Yêu cầu cấp quyền email</li>
+                    </ul>
+                </div>
+            </div>
+            <button class="settings-btn">
+                <i class="fas fa-cog"></i>
+            </button>
+            <div class="settings-dropdown">
+                <ul>
+                    <li><i class="fas fa-info-circle"></i> Thông tin trang web</li>
+                    <li><i class="fas fa-user-edit"></i> Chỉnh sửa hồ sơ</li>
+                    <li><i class="fas fa-file-alt"></i> Chính sách quyền riêng tư</li>
+                    <li><i class="fas fa-question-circle"></i> Hỗ trợ / Liên hệ</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <nav class="horizontal-nav">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="HTML.HTML"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="my-courses.html"><i class="fas fa-book"></i> Khóa học của tôi</a></li>
+                <li><a href="schedule.html"><i class="fas fa-calendar-alt"></i> Lịch học</a></li>
+                <li><a href="assignment.html"><i class="fas fa-tasks"></i> Bài tập</a></li>
+                <li><a href="quizzes.html"><i class="fas fa-clipboard-check"></i> Bài kiểm tra</a></li>
+                <li class="active"><a href="reports.html"><i class="fas fa-chart-bar"></i> Báo cáo học tập</a></li>
+                <li><a href="discussion.html"><i class="fas fa-comments"></i> Thảo luận</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main class="main-content">
+            <h1 style="font-size: 2.2rem; margin-bottom: 32px; color: #2a4cb3;">Báo cáo học tập</h1>
+            
+            <!-- Huy hiệu và Cấp độ -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 32px;">
+                <!-- Huy hiệu và Thành tích -->
+                <section class="card" style="background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden;">
+                    <div class="card-header" style="padding: 24px 32px 0 32px; border-bottom: 1px solid #f0f2f5;">
+                        <h3 style="font-size: 1.4rem; font-weight: 700; color: #2a4cb3; display: flex; align-items: center; gap: 12px;">
+                            <i class="fas fa-medal" style="color: #f6c23e;"></i> Huy hiệu & Thành tích
+                        </h3>
+                    </div>
+                    <div style="padding: 32px;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 16px;">
+                            <!-- Huy hiệu đã đạt -->
+                            <div style="text-align: center; padding: 16px; background: linear-gradient(135deg, #fff3cd, #ffeaa7); border-radius: 12px; border: 2px solid #f6c23e;">
+                                <div style="font-size: 2rem; color: #f6c23e; margin-bottom: 8px;">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div style="font-size: 0.9rem; font-weight: 600; color: #856404;">Hoàn thành khóa</div>
+                                <div style="font-size: 0.8rem; color: #856404; margin-top: 4px;">CS201</div>
+                            </div>
+                            <div style="text-align: center; padding: 16px; background: linear-gradient(135deg, #d4edda, #c3e6cb); border-radius: 12px; border: 2px solid #28a745;">
+                                <div style="font-size: 2rem; color: #28a745; margin-bottom: 8px;">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div style="font-size: 0.9rem; font-weight: 600; color: #155724;">Điểm cao</div>
+                                <div style="font-size: 0.8rem; color: #155724; margin-top: 4px;">9.2/10</div>
+                            </div>
+                            <div style="text-align: center; padding: 16px; background: linear-gradient(135deg, #d1ecf1, #bee5eb); border-radius: 12px; border: 2px solid #17a2b8;">
+                                <div style="font-size: 2rem; color: #17a2b8; margin-bottom: 8px;">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div style="font-size: 0.9rem; font-weight: 600; color: #0c5460;">Học đều</div>
+                                <div style="font-size: 0.8rem; color: #0c5460; margin-top: 4px;">7 ngày liên tiếp</div>
+                            </div>
+                            <div style="text-align: center; padding: 16px; background: linear-gradient(135deg, #e3f0ff, #b6e0fe); border-radius: 12px; border: 2px solid #4e73df;">
+                                <div style="font-size: 2rem; color: #4e73df; margin-bottom: 8px;">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <div style="font-size: 0.9rem; font-weight: 600; color: #2a4cb3;">Chăm chỉ</div>
+                                <div style="font-size: 0.8rem; color: #2a4cb3; margin-top: 4px;">156h học</div>
+                            </div>
+                        </div>
+                        <!-- Huy hiệu chưa đạt -->
+                        <div style="margin-top: 24px;">
+                            <h4 style="font-size: 1rem; font-weight: 600; color: #6c757d; margin-bottom: 12px;">Huy hiệu sắp đạt được:</h4>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px;">
+                                <div style="text-align: center; padding: 12px; background: #f8f9fc; border-radius: 8px; opacity: 0.6;">
+                                    <div style="font-size: 1.5rem; color: #6c757d; margin-bottom: 6px;">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div style="font-size: 0.8rem; color: #6c757d;">Tốt nghiệp</div>
+                                </div>
+                                <div style="text-align: center; padding: 12px; background: #f8f9fc; border-radius: 8px; opacity: 0.6;">
+                                    <div style="font-size: 1.5rem; color: #6c757d; margin-bottom: 6px;">
+                                        <i class="fas fa-crown"></i>
+                                    </div>
+                                    <div style="font-size: 0.8rem; color: #6c757d;">Xuất sắc</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cấp độ và Danh hiệu -->
+                <section class="card" style="background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden;">
+                    <div class="card-header" style="padding: 24px 32px 0 32px; border-bottom: 1px solid #f0f2f5;">
+                        <h3 style="font-size: 1.4rem; font-weight: 700; color: #2a4cb3; display: flex; align-items: center; gap: 12px;">
+                            <i class="fas fa-crown" style="color: #f6c23e;"></i> Cấp độ & Danh hiệu
+                        </h3>
+                    </div>
+                    <div style="padding: 32px;">
+                        <!-- Cấp độ hiện tại -->
+                        <div style="text-align: center; margin-bottom: 24px;">
+                            <div style="position: relative; display: inline-block;">
+                                <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #f6c23e, #ffd700); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; border: 4px solid #fff; box-shadow: 0 4px 20px rgba(246, 194, 62, 0.3);">
+                                    <div style="font-size: 2.5rem; color: #fff; font-weight: 800;">15</div>
+                                </div>
+                                <div style="position: absolute; top: -8px; right: -8px; background: #e74a3b; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700;">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                            </div>
+                            <h4 style="font-size: 1.3rem; font-weight: 700; color: #2a4cb3; margin-bottom: 8px;">Cấp độ 15</h4>
+                            <p style="color: #6c757d; font-size: 0.95rem; margin-bottom: 16px;">Học viên Chuyên nghiệp</p>
+                            <div style="background: #f8f9fc; border-radius: 8px; padding: 12px; margin-bottom: 16px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                    <span style="font-size: 0.9rem; color: #6c757d;">Tiến độ cấp độ</span>
+                                    <span style="font-weight: 600; color: #2a4cb3;">75%</span>
+                                </div>
+                                <div style="width: 100%; height: 8px; background: #e3e6f0; border-radius: 4px; overflow: hidden;">
+                                    <div style="width: 75%; height: 100%; background: linear-gradient(90deg, #4e73df, #2a4cb3); border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Danh hiệu đã đạt -->
+                        <div style="margin-bottom: 20px;">
+                            <h5 style="font-size: 1rem; font-weight: 600; color: #2a4cb3; margin-bottom: 12px;">Danh hiệu đã đạt:</h5>
+                            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                <span style="background: linear-gradient(135deg, #d4edda, #c3e6cb); color: #155724; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #28a745;">
+                                    <i class="fas fa-seedling"></i> Mầm non
+                                </span>
+                                <span style="background: linear-gradient(135deg, #d1ecf1, #bee5eb); color: #0c5460; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #17a2b8;">
+                                    <i class="fas fa-leaf"></i> Lá xanh
+                                </span>
+                                <span style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); color: #856404; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #f6c23e;">
+                                    <i class="fas fa-star"></i> Ngôi sao
+                                </span>
+                                <span style="background: linear-gradient(135deg, #e3f0ff, #b6e0fe); color: #2a4cb3; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #4e73df;">
+                                    <i class="fas fa-gem"></i> Kim cương
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Danh hiệu tiếp theo -->
+                        <div>
+                            <h5 style="font-size: 1rem; font-weight: 600; color: #2a4cb3; margin-bottom: 12px;">Danh hiệu tiếp theo:</h5>
+                            <div style="background: #f8f9fc; border-radius: 8px; padding: 16px; border-left: 4px solid #f6c23e;">
+                                <div style="display: flex; align-items: center; gap: 12px;">
+                                    <div style="font-size: 1.5rem; color: #f6c23e;">
+                                        <i class="fas fa-crown"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight: 600; color: #2a4cb3; margin-bottom: 4px;">Bậc thầy</div>
+                                        <div style="font-size: 0.85rem; color: #6c757d;">Cần thêm 5 cấp độ nữa</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="dashboard-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 32px; margin-bottom: 32px;">
+                <!-- Biểu đồ tiến độ học tập (chỉ theo tuần) -->
+                <section class="card" style="background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden;">
+                    <div class="card-header" style="padding: 24px 32px 0 32px; border-bottom: 1px solid #f0f2f5;">
+                        <h3 style="font-size: 1.4rem; font-weight: 700; color: #2a4cb3; display: flex; align-items: center; gap: 12px;">
+                            <i class="fas fa-chart-line" style="color: #4e73df;"></i> Tiến độ học tập tuần này
+                        </h3>
+                    </div>
+                    <div style="padding: 32px;">
+                        <canvas id="progressChart" style="height: 300px !important;"></canvas>
+                    </div>
+                </section>
+
+                <!-- Điểm tối đa đã đạt -->
+                <section class="card" style="background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden;">
+                    <div class="card-header" style="padding: 24px 32px 0 32px; border-bottom: 1px solid #f0f2f5;">
+                        <h3 style="font-size: 1.4rem; font-weight: 700; color: #2a4cb3; display: flex; align-items: center; gap: 12px;">
+                            <i class="fas fa-trophy" style="color: #f6c23e;"></i> Điểm tối đa
+                        </h3>
+                    </div>
+                    <div style="padding: 32px;">
+                        <div class="max-score-item" style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border-radius: 12px; padding: 20px; margin-bottom: 16px; border-left: 4px solid #f6c23e;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <h4 style="font-size: 1.1rem; font-weight: 700; color: #856404;">CS201 - Cơ sở dữ liệu</h4>
+                                <span style="background: #f6c23e; color: white; padding: 4px 12px; border-radius: 20px; font-weight: 700; font-size: 0.9rem;">10/10</span>
+                            </div>
+                            <p style="color: #856404; font-size: 0.95rem;">Quiz SQL cơ bản - Hoàn thành xuất sắc!</p>
+                        </div>
+                        <div class="max-score-item" style="background: linear-gradient(135deg, #d1ecf1, #bee5eb); border-radius: 12px; padding: 20px; margin-bottom: 16px; border-left: 4px solid #17a2b8;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <h4 style="font-size: 1.1rem; font-weight: 700; color: #0c5460;">CS101 - Lập trình</h4>
+                                <span style="background: #17a2b8; color: white; padding: 4px 12px; border-radius: 20px; font-weight: 700; font-size: 0.9rem;">9/10</span>
+                            </div>
+                            <p style="color: #0c5460; font-size: 0.95rem;">Bài kiểm tra vòng lặp - Kết quả tốt!</p>
+                        </div>
+                        <div class="max-score-item" style="background: linear-gradient(135deg, #d4edda, #c3e6cb); border-radius: 12px; padding: 20px; border-left: 4px solid #28a745;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <h4 style="font-size: 1.1rem; font-weight: 700; color: #155724;">MATH202 - Giải tích</h4>
+                                <span style="background: #28a745; color: white; padding: 4px 12px; border-radius: 20px; font-weight: 700; font-size: 0.9rem;">8.5/10</span>
+                            </div>
+                            <p style="color: #155724; font-size: 0.95rem;">Bài kiểm tra chuỗi - Tiến bộ tốt!</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Chi tiết từng khóa học -->
+            <section class="card" style="background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; margin-bottom: 32px;">
+                <div class="card-header" style="padding: 24px 32px 0 32px; border-bottom: 1px solid #f0f2f5;">
+                    <h3 style="font-size: 1.4rem; font-weight: 700; color: #2a4cb3; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-book-open" style="color: #1cc88a;"></i> Chi tiết từng khóa học
+                    </h3>
+                </div>
+                <div style="padding: 32px; display: flex; gap: 0; min-height: 500px;">
+                    <!-- Sidebar môn học -->
+                    <aside id="sidebar-subjects" style="width: 220px; min-width: 140px; background: #f8f9fc; border-radius: 0 18px 18px 0; box-shadow: 0 2px 12px #4e73df11; padding: 32px 0 32px 0; display: flex; flex-direction: column; align-items: stretch; margin-right: 16px; margin-left:0; height: fit-content; position: relative; left: 0;">
+                        <h2 style="font-size: 1.15rem; font-weight: 800; color: #2a4cb3; text-align: center; margin-bottom: 18px;">Môn học</h2>
+                        <div id="sidebar-list" style="display: flex; flex-direction: column; gap: 12px;">
+                            <button class="sidebar-subject-btn active" data-subject="CS101" style="padding: 14px 0; border: none; border-radius: 8px 0 0 8px; background: linear-gradient(120deg, #e3f0ff 70%, #b6e0fe 100%); color: #2a4cb3; font-size: 1.05rem; font-weight: 700; cursor: pointer; box-shadow: 0 2px 8px #4e73df11; transition: background 0.2s, color 0.2s;"> <i class="fas fa-code"></i> CS101<br><span style='font-size:0.95rem; font-weight:400;'>Nhập môn Lập trình</span></button>
+                            <button class="sidebar-subject-btn" data-subject="MATH202" style="padding: 14px 0; border: none; border-radius: 8px 0 0 8px; background: linear-gradient(120deg, #fffbe3 70%, #ffe7b6 100%); color: #b38a00; font-size: 1.05rem; font-weight: 700; cursor: pointer; box-shadow: 0 2px 8px #f6c23e11; transition: background 0.2s, color 0.2s;"> <i class="fas fa-calculator"></i> MATH202<br><span style='font-size:0.95rem; font-weight:400;'>Giải tích 2</span></button>
+                            <button class="sidebar-subject-btn" data-subject="CS201" style="padding: 14px 0; border: none; border-radius: 8px 0 0 8px; background: linear-gradient(120deg, #e3ffe3 70%, #b6feb6 100%); color: #1cc88a; font-size: 1.05rem; font-weight: 700; cursor: pointer; box-shadow: 0 2px 8px #1cc88a11; transition: background 0.2s, color 0.2s;"> <i class="fas fa-database"></i> CS201<br><span style='font-size:0.95rem; font-weight:400;'>Cơ sở dữ liệu</span></button>
+                        </div>
+                    </aside>
+                    <!-- Phần báo cáo bên phải -->
+                    <section style="flex:1; min-width:0;">
+                        <div id="course-tabs" style="max-width: 1200px; margin: 0 auto;">
+                            <div style="display: flex; gap: 0; border-radius: 12px 12px 0 0; overflow: hidden; margin-bottom: 0;">
+                                <button id="tab-assignments" class="tab-btn active" style="flex:1; padding: 22px 0; font-size: 1.25rem; font-weight: 800; border: none; background: #e3f0ff; color: #2a4cb3; cursor: pointer; transition: background 0.2s;">Báo cáo bài tập</button>
+                                <button id="tab-quizzes" class="tab-btn" style="flex:1; padding: 22px 0; font-size: 1.25rem; font-weight: 800; border: none; background: #f8f9fc; color: #888; cursor: pointer; transition: background 0.2s;">Báo cáo bài kiểm tra</button>
+                            </div>
+                            <div id="tab-content-assignments" class="tab-content" style="display:block;"></div>
+                            <div id="tab-content-quizzes" class="tab-content" style="display:none;"></div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+            <!-- Lịch sử học tập -->
+            <section class="card" style="background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden;">
+                <div class="card-header" style="padding: 24px 32px 0 32px; border-bottom: 1px solid #f0f2f5;">
+                    <h3 style="font-size: 1.4rem; font-weight: 700; color: #2a4cb3; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-history" style="color: #e74a3b;"></i> Lịch sử học tập
+                    </h3>
+                </div>
+                <div style="padding: 32px;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                        <!-- Lịch đăng nhập gần đây -->
+                        <div style="background: #f8f9fc; border-radius: 12px; padding: 24px;">
+                            <h4 style="font-size: 1.1rem; font-weight: 700; color: #2a4cb3; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-sign-in-alt" style="color: #4e73df;"></i> Lịch đăng nhập gần đây
+                            </h4>
+                            <div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e3e6f0; margin-bottom: 12px;">
+                                    <span style="color: #6c757d;">Hôm nay</span>
+                                    <span style="font-weight: 600; color: #2a4cb3;">3 lần</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e3e6f0; margin-bottom: 12px;">
+                                    <span style="color: #6c757d;">Hôm qua</span>
+                                    <span style="font-weight: 600; color: #2a4cb3;">2 lần</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e3e6f0; margin-bottom: 12px;">
+                                    <span style="color: #6c757d;">2 ngày trước</span>
+                                    <span style="font-weight: 600; color: #2a4cb3;">1 lần</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0;">
+                                    <span style="color: #6c757d;">Tuần này</span>
+                                    <span style="font-weight: 600; color: #2a4cb3;">12 lần</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Thời gian học trung bình mỗi buổi -->
+                        <div style="background: #f8f9fc; border-radius: 12px; padding: 24px;">
+                            <h4 style="font-size: 1.1rem; font-weight: 700; color: #2a4cb3; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-clock" style="color: #f6c23e;"></i> Thời gian học trung bình
+                            </h4>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2.5rem; font-weight: 800; color: #f6c23e; margin-bottom: 8px;">2.5h</div>
+                                <div style="color: #6c757d; font-size: 0.9rem;">Mỗi buổi học</div>
+                            </div>
+                            <div style="margin-top: 16px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 4px 0; margin-bottom: 8px;">
+                                    <span style="color: #6c757d; font-size: 0.9rem;">Buổi dài nhất</span>
+                                    <span style="font-weight: 600; color: #f6c23e;">4.2h</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 4px 0;">
+                                    <span style="color: #6c757d; font-size: 0.9rem;">Buổi ngắn nhất</span>
+                                    <span style="font-weight: 600; color: #f6c23e;">1.1h</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tổng số giờ học -->
+                        <div style="background: #f8f9fc; border-radius: 12px; padding: 24px;">
+                            <h4 style="font-size: 1.1rem; font-weight: 700; color: #2a4cb3; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-hourglass-half" style="color: #1cc88a;"></i> Tổng số giờ học
+                            </h4>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2.5rem; font-weight: 800; color: #1cc88a; margin-bottom: 8px;">156h</div>
+                                <div style="color: #6c757d; font-size: 0.9rem;">Từ đầu học kỳ</div>
+                            </div>
+                            <div style="margin-top: 16px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 4px 0; margin-bottom: 8px;">
+                                    <span style="color: #6c757d; font-size: 0.9rem;">Tuần này</span>
+                                    <span style="font-weight: 600; color: #1cc88a;">18h</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 4px 0;">
+                                    <span style="color: #6c757d; font-size: 0.9rem;">Tháng này</span>
+                                    <span style="font-weight: 600; color: #1cc88a;">72h</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Hệ thống Quản lý Học tập - Đại học Công nghệ</p>
+            <div class="footer-links">
+                <a href="#">Về chúng tôi</a>
+                <a href="#">Hỗ trợ</a>
+                <a href="#">Chính sách bảo mật</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
