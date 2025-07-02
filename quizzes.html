@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài kiểm tra - LMS Uni</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <h1>LMS Uni</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm kiếm khóa học, tài liệu...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="user-actions">
+            <button class="notification-btn">
+                <i class="fas fa-bell"></i>
+                <span class="badge">3</span>
+            </button>
+            <div class="notification-dropdown">
+                <ul>
+                    <li>
+                        <span class="dropdown-user-icon"><i class="fas fa-user"></i></span>
+                        <div class="dropdown-content">
+                            <strong>Lịch thi cuối kỳ đã cập nhật</strong>
+                            <span>10 phút trước</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="dropdown-user-icon"><i class="fas fa-user"></i></span>
+                        <div class="dropdown-content">
+                            <strong>Thay đổi phòng học CS101</strong>
+                            <span>Hôm qua</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="user-profile">
+                <i class="fas fa-user"></i>
+                <div class="user-dropdown">
+                    <ul>
+                        <li><i class="fas fa-lock"></i> Đăng nhập</li>
+                        <li><i class="fas fa-envelope"></i> Yêu cầu cấp quyền email</li>
+                    </ul>
+                </div>
+            </div>
+            <button class="settings-btn">
+                <i class="fas fa-cog"></i>
+            </button>
+            <div class="settings-dropdown">
+                <ul>
+                    <li><i class="fas fa-info-circle"></i> Thông tin trang web</li>
+                    <li><i class="fas fa-user-edit"></i> Chỉnh sửa hồ sơ</li>
+                    <li><i class="fas fa-file-alt"></i> Chính sách quyền riêng tư</li>
+                    <li><i class="fas fa-question-circle"></i> Hỗ trợ / Liên hệ</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav class="horizontal-nav">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="HTML.HTML"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="my-courses.html"><i class="fas fa-book"></i> Khóa học của tôi</a></li>
+                <li><a href="schedule.html"><i class="fas fa-calendar-alt"></i> Lịch học</a></li>
+                <li><a href="assignment.html"><i class="fas fa-tasks"></i> Bài tập</a></li>
+                <li class="active"><a href="quizzes.html"><i class="fas fa-clipboard-check"></i> Bài kiểm tra</a></li>
+                <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Báo cáo học tập</a></li>
+                <li><a href="discussion.html"><i class="fas fa-comments"></i> Thảo luận</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main class="main-content" style="display: flex; gap: 0; min-height: 600px;">
+            <!-- Sidebar môn học -->
+            <aside id="sidebar-subjects" style="width: 220px; min-width: 140px; background: #f8f9fc; border-radius: 0 18px 18px 0; box-shadow: 0 2px 12px #4e73df11; padding: 32px 0 32px 0; display: flex; flex-direction: column; align-items: stretch; margin-right: 16px; margin-left:0; height: fit-content; position: relative; left: 0;">
+                <h2 style="font-size: 1.15rem; font-weight: 800; color: #2a4cb3; text-align: center; margin-bottom: 18px;">Môn học</h2>
+                <div id="sidebar-list" style="display: flex; flex-direction: column; gap: 12px;">
+                    <button class="sidebar-subject-btn active" data-subject="CS101" style="padding: 14px 0; border: none; border-radius: 8px 0 0 8px; background: linear-gradient(120deg, #e3f0ff 70%, #b6e0fe 100%); color: #2a4cb3; font-size: 1.05rem; font-weight: 700; cursor: pointer; box-shadow: 0 2px 8px #4e73df11; transition: background 0.2s, color 0.2s;"> <i class="fas fa-code"></i> CS101<br><span style='font-size:0.95rem; font-weight:400;'>Nhập môn Lập trình</span></button>
+                    <button class="sidebar-subject-btn" data-subject="MATH202" style="padding: 14px 0; border: none; border-radius: 8px 0 0 8px; background: linear-gradient(120deg, #fffbe3 70%, #ffe7b6 100%); color: #b38a00; font-size: 1.05rem; font-weight: 700; cursor: pointer; box-shadow: 0 2px 8px #f6c23e11; transition: background 0.2s, color 0.2s;"> <i class="fas fa-calculator"></i> MATH202<br><span style='font-size:0.95rem; font-weight:400;'>Giải tích 2</span></button>
+                    <button class="sidebar-subject-btn" data-subject="CS201" style="padding: 14px 0; border: none; border-radius: 8px 0 0 8px; background: linear-gradient(120deg, #e3ffe3 70%, #b6feb6 100%); color: #1cc88a; font-size: 1.05rem; font-weight: 700; cursor: pointer; box-shadow: 0 2px 8px #1cc88a11; transition: background 0.2s, color 0.2s;"> <i class="fas fa-database"></i> CS201<br><span style='font-size:0.95rem; font-weight:400;'>Cơ sở dữ liệu</span></button>
+                </div>
+            </aside>
+            <!-- Phần bài kiểm tra bên phải -->
+            <section style="flex:1; min-width:0;">
+                <h1 style="font-size:2.2rem; margin-bottom: 32px;">Bài kiểm tra của bạn</h1>
+                <div id="quiz-tabs" style="max-width: 1200px; margin: 0 auto;">
+                    <div style="display: flex; gap: 0; border-radius: 12px 12px 0 0; overflow: hidden; margin-bottom: 0;">
+                        <button id="tab-upcoming" class="tab-btn active" style="flex:1; padding: 22px 0; font-size: 1.25rem; font-weight: 800; border: none; background: #e3f0ff; color: #2a4cb3; cursor: pointer; transition: background 0.2s;">Bài kiểm tra sắp tới</button>
+                        <button id="tab-done" class="tab-btn" style="flex:1; padding: 22px 0; font-size: 1.25rem; font-weight: 800; border: none; background: #f8f9fc; color: #888; cursor: pointer; transition: background 0.2s;">Bài kiểm tra đã hoàn thành</button>
+                    </div>
+                    <div id="tab-content-upcoming" class="tab-content" style="display:block;"></div>
+                    <div id="tab-content-done" class="tab-content" style="display:none;"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Hệ thống Quản lý Học tập - Đại học Công nghệ</p>
+            <div class="footer-links">
+                <a href="#">Về chúng tôi</a>
+                <a href="#">Hỗ trợ</a>
+                <a href="#">Chính sách bảo mật</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

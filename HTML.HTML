@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống Quản lý Học tập - LMS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <h1>LMS Uni</h1>
+        </div>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm kiếm khóa học, tài liệu...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        
+        <div class="user-actions">
+            <button class="notification-btn">
+                <i class="fas fa-bell"></i>
+                <span class="badge">3</span>
+            </button>
+            <div class="notification-dropdown">
+                <ul>
+                    <li>
+                        <span class="dropdown-user-icon"><i class="fas fa-user"></i></span>
+                        <div class="dropdown-content">
+                            <strong>Lịch thi cuối kỳ đã cập nhật</strong>
+                            <span>10 phút trước</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="dropdown-user-icon"><i class="fas fa-user"></i></span>
+                        <div class="dropdown-content">
+                            <strong>Thay đổi phòng học CS101</strong>
+                            <span>Hôm qua</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="user-profile">
+                <i class="fas fa-user"></i>
+                <div class="user-dropdown">
+                    <ul>
+                        <li><i class="fas fa-lock"></i> Đăng nhập</li>
+                        <li><i class="fas fa-envelope"></i> Yêu cầu cấp quyền email</li>
+                    </ul>
+                </div>
+            </div>
+            <button class="settings-btn">
+                <i class="fas fa-cog"></i>
+            </button>
+            <div class="settings-dropdown">
+                <ul>
+                    <li><i class="fas fa-info-circle"></i> Thông tin trang web</li>
+                    <li><i class="fas fa-user-edit"></i> Chỉnh sửa hồ sơ</li>
+                    <li><i class="fas fa-file-alt"></i> Chính sách quyền riêng tư</li>
+                    <li><i class="fas fa-question-circle"></i> Hỗ trợ / Liên hệ</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Horizontal Navigation -->
+    <nav class="horizontal-nav">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="my-courses.html"><i class="fas fa-book"></i> Khóa học của tôi</a></li>
+                <li><a href="schedule.html"><i class="fas fa-calendar-alt"></i> Lịch học</a></li>
+                <li><a href="assignment.html"><i class="fas fa-tasks"></i> Bài tập</a></li>
+                <li><a href="quizzes.html"><i class="fas fa-clipboard-check"></i> Bài kiểm tra</a></li>
+                <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Báo cáo học tập</a></li>
+                <li><a href="discussion.html"><i class="fas fa-comments"></i> Thảo luận</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="welcome-banner">
+                <div class="banner-info">
+                    <h2>Chào mừng trở lại, Nguyễn Văn A!</h2>
+                    <div id="streak-row"></div>
+                </div>
+                <div class="banner-stats">
+                    <div class="chart-date-range center">01/07/2025 - 30/07/2025</div>
+                    <canvas id="loginChart" width="450" height="180"></canvas>
+                </div>
+            </div>
+
+            <div class="dashboard-quick">
+                <div class="dashboard-quick-row">
+                    <div class="dashboard-quick-col">
+                        <div class="dashboard-quick-card">
+                            <div class="dashboard-quick-title"><span style="font-size:1.2em">🔔</span> Thông báo gần đây</div>
+                            <ul class="dashboard-quick-list">
+                                <li>
+                                    <div style="display:flex;align-items:center;gap:10px;">
+                                        <span class="notification-icon" style="background:#e3f0ff;color:#4e73df;"><i class="fas fa-calendar-check"></i></span>
+                                        <div>
+                                            <div style="font-weight:600;">Lịch thi cuối kỳ đã cập nhật</div>
+                                            <div style="font-size:0.97em;color:#888;">Vui lòng kiểm tra lịch thi trong mục "Lịch học"</div>
+                                            <div style="font-size:0.92em;color:#aaa;">10 phút trước</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div style="display:flex;align-items:center;gap:10px;">
+                                        <span class="notification-icon" style="background:#f3e5f5;color:#8e24aa;"><i class="fas fa-chalkboard-teacher"></i></span>
+                                        <div>
+                                            <div style="font-weight:600;">Thay đổi phòng học CS101</div>
+                                            <div style="font-size:0.97em;color:#888;">Chuyển sang phòng D201 từ tuần sau</div>
+                                            <div style="font-size:0.92em;color:#aaa;">Hôm qua</div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-quick-row">
+                    <div class="dashboard-quick-col-full">
+                        <div class="dashboard-quick-card">
+                            <div class="dashboard-quick-title"><span style="font-size:1.2em">📘</span> Tiến độ khóa học gần đây</div>
+                            <div class="dashboard-progress-flex">
+                                <div class="dashboard-progress-col">
+                                    <div class="card-header" style="padding:0 0 10px 0;margin-bottom:8px;"><h3 style="font-size:1.08em;"><i class="fas fa-book-open"></i> Khóa học của tôi</h3></div>
+                                    <div class="courses-list">
+                                        <div class="course-item">
+                                            <div class="course-icon" style="background-color: #4e73df;">
+                                                <i class="fas fa-code"></i>
+                                            </div>
+                                            <div class="course-info">
+                                                <h4>CS101 - Nhập môn Lập trình</h4>
+                                                <p>Giảng viên: TS. Trần Văn B</p>
+                                                <div class="progress-container">
+                                                    <div class="progress-bar" style="width: 70%"></div>
+                                                    <span>70% hoàn thành</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="course-item">
+                                            <div class="course-icon" style="background-color: #1cc88a;">
+                                                <i class="fas fa-calculator"></i>
+                                            </div>
+                                            <div class="course-info">
+                                                <h4>MATH202 - Giải tích 2</h4>
+                                                <p>Giảng viên: PGS. Lê Thị C</p>
+                                                <div class="progress-container">
+                                                    <div class="progress-bar" style="width: 40%"></div>
+                                                    <span>40% hoàn thành</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard-progress-divider"></div>
+                                <div class="dashboard-progress-col">
+                                    <div class="card-header" style="padding:0 0 10px 0;margin-bottom:8px;"><h3 style="font-size:1.08em;"><i class="fas fa-tasks"></i> Bài tập sắp đến hạn</h3></div>
+                                    <ul class="assignment-list">
+                                        <li>
+                                            <div class="assignment-info">
+                                                <h4>Bài tập lớn môn CS101</h4>
+                                                <p>Mô tả: Thiết kế ứng dụng quản lý sinh viên</p>
+                                            </div>
+                                            <div class="assignment-due">
+                                                <i class="fas fa-clock"></i>
+                                                <span>Còn 2 ngày</span>
+                                                <button class="btn-submit">Nộp bài</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="assignment-info">
+                                                <h4>Bài kiểm tra MATH202</h4>
+                                                <p>Chương 3: Tích phân bội</p>
+                                            </div>
+                                            <div class="assignment-due">
+                                                <i class="fas fa-clock"></i>
+                                                <span>Còn 4 ngày</span>
+                                                <button class="btn-start">Bắt đầu</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-quick-row">
+                    <div class="dashboard-quick-col-full">
+                        <div class="dashboard-quick-card">
+                            <div class="dashboard-quick-title"><span style="font-size:1.2em">🎯</span> Gợi ý / Mục tiêu / Hành động tiếp theo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Khóa học đang tham gia -->
+                <!-- <section class="card enrolled-courses"> ... </section> -->
+
+                <!-- Bài tập sắp đến hạn -->
+                <!-- <section class="card assignments"> ... </section> -->
+
+                <!-- Thông báo -->
+                <!-- <section class="card notifications"> ... </section> -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Hệ thống Quản lý Học tập - Đại học Công nghệ</p>
+            <div class="footer-links">
+                <a href="#">Về chúng tôi</a>
+                <a href="#">Hỗ trợ</a>
+                <a href="#">Chính sách bảo mật</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

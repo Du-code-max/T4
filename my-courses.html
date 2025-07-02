@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khóa học của tôi - LMS Uni</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <h1>LMS Uni</h1>
+        </div>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm kiếm khóa học, tài liệu...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        
+        <div class="user-actions">
+            <button class="notification-btn">
+                <i class="fas fa-bell"></i>
+                <span class="badge">3</span>
+            </button>
+            <div class="notification-dropdown">
+                <ul>
+                    <li>
+                        <span class="dropdown-user-icon"><i class="fas fa-user"></i></span>
+                        <div class="dropdown-content">
+                            <strong>Lịch thi cuối kỳ đã cập nhật</strong>
+                            <span>10 phút trước</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="dropdown-user-icon"><i class="fas fa-user"></i></span>
+                        <div class="dropdown-content">
+                            <strong>Thay đổi phòng học CS101</strong>
+                            <span>Hôm qua</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="user-profile">
+                <i class="fas fa-user"></i>
+                <div class="user-dropdown">
+                    <ul>
+                        <li><i class="fas fa-lock"></i> Đăng nhập</li>
+                        <li><i class="fas fa-envelope"></i> Yêu cầu cấp quyền email</li>
+                    </ul>
+                </div>
+            </div>
+            <button class="settings-btn">
+                <i class="fas fa-cog"></i>
+            </button>
+            <div class="settings-dropdown">
+                <ul>
+                    <li><i class="fas fa-info-circle"></i> Thông tin trang web</li>
+                    <li><i class="fas fa-user-edit"></i> Chỉnh sửa hồ sơ</li>
+                    <li><i class="fas fa-file-alt"></i> Chính sách quyền riêng tư</li>
+                    <li><i class="fas fa-question-circle"></i> Hỗ trợ / Liên hệ</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <nav class="horizontal-nav">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="HTML.HTML"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li class="active"><a href="my-courses.html"><i class="fas fa-book"></i> Khóa học của tôi</a></li>
+                <li><a href="schedule.html"><i class="fas fa-calendar-alt"></i> Lịch học</a></li>
+                <li><a href="assignment.html"><i class="fas fa-tasks"></i> Bài tập</a></li>
+                <li><a href="quizzes.html"><i class="fas fa-clipboard-check"></i> Bài kiểm tra</a></li>
+                <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Báo cáo học tập</a></li>
+                <li><a href="discussion.html"><i class="fas fa-comments"></i> Thảo luận</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main class="main-content">
+            <h1>Các khóa học của tôi</h1>
+            <div class="dashboard-grid">
+                <section class="card enrolled-courses">
+                    <div class="card-header">
+                        <h3><i class="fas fa-code"></i> CS101 - Nhập môn Lập trình</h3>
+                    </div>
+                    <img class="course-image" src="https://via.placeholder.com/80x80/4CAF50/FFFFFF?text=CS101" alt="CS101" style="width: 80px; margin-top: 10px;">
+                    <div class="courses-list">
+                        <div class="course-item">
+                            <div class="course-info">
+                                <h4>Giảng viên: TS. Trần Văn B</h4>
+                                <p>Mô tả: Khóa học giới thiệu về các khái niệm cơ bản trong lập trình, bao gồm cấu trúc dữ liệu, thuật toán và ngôn ngữ lập trình Python.</p>
+                                <p class="course-deadline" style="color: #e74a3b; font-weight: 500;">Hạn đến: 31/07/2025</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 70%"></div>
+                                    <span>70% hoàn thành</span>
+                                </div>
+                                <button class="btn-submit" style="margin-top: 10px;">Vào học</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card enrolled-courses">
+                    <div class="card-header">
+                        <h3><i class="fas fa-calculator"></i> MATH202 - Giải tích 2</h3>
+                    </div>
+                    <img class="course-image" src="https://via.placeholder.com/80x80/2196F3/FFFFFF?text=MATH202" alt="MATH202" style="width: 80px; margin-top: 10px;">
+                    <div class="courses-list">
+                        <div class="course-item">
+                            <div class="course-info">
+                                <h4>Giảng viên: PGS. Lê Thị C</h4>
+                                <p>Mô tả: Khóa học nâng cao về giải tích, bao gồm tích phân bội, chuỗi Fourier và phương trình vi phân.</p>
+                                <p class="course-deadline" style="color: #e74a3b; font-weight: 500;">Hạn đến: 31/07/2025</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 40%"></div>
+                                    <span>40% hoàn thành</span>
+                                </div>
+                                <button class="btn-submit" style="margin-top: 10px;">Vào học</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card enrolled-courses">
+                    <div class="card-header">
+                        <h3><i class="fas fa-database"></i> CS201 - Cơ sở dữ liệu</h3>
+                    </div>
+                    <img class="course-image" src="https://via.placeholder.com/80x80/FF9800/FFFFFF?text=CS201" alt="CS201" style="width: 80px; margin-top: 10px;">
+                    <div class="courses-list">
+                        <div class="course-item">
+                            <div class="course-info">
+                                <h4>Giảng viên: TS. Nguyễn Văn D</h4>
+                                <p>Mô tả: Khóa học về thiết kế và quản lý cơ sở dữ liệu, SQL, và các hệ thống quản trị cơ sở dữ liệu.</p>
+                                <p class="course-deadline" style="color: #e74a3b; font-weight: 500;">Hạn đến: 15/08/2025</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 25%"></div>
+                                    <span>25% hoàn thành</span>
+                                </div>
+                                <button class="btn-submit" style="margin-top: 10px;">Vào học</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card enrolled-courses">
+                    <div class="card-header">
+                        <h3><i class="fas fa-globe"></i> ENG101 - Tiếng Anh chuyên ngành</h3>
+                    </div>
+                    <img class="course-image" src="https://via.placeholder.com/80x80/9C27B0/FFFFFF?text=ENG101" alt="ENG101" style="width: 80px; margin-top: 10px;">
+                    <div class="courses-list">
+                        <div class="course-item">
+                            <div class="course-info">
+                                <h4>Giảng viên: ThS. Trần Thị E</h4>
+                                <p>Mô tả: Khóa học tiếng Anh chuyên ngành công nghệ thông tin, tập trung vào kỹ năng đọc hiểu và giao tiếp.</p>
+                                <p class="course-deadline" style="color: #e74a3b; font-weight: 500;">Hạn đến: 20/08/2025</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 60%"></div>
+                                    <span>60% hoàn thành</span>
+                                </div>
+                                <button class="btn-submit" style="margin-top: 10px;">Vào học</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card enrolled-courses">
+                    <div class="card-header">
+                        <h3><i class="fas fa-network-wired"></i> CS301 - Mạng máy tính</h3>
+                    </div>
+                    <img class="course-image" src="https://via.placeholder.com/80x80/607D8B/FFFFFF?text=CS301" alt="CS301" style="width: 80px; margin-top: 10px;">
+                    <div class="courses-list">
+                        <div class="course-item">
+                            <div class="course-info">
+                                <h4>Giảng viên: PGS. Phạm Văn F</h4>
+                                <p>Mô tả: Khóa học về kiến trúc mạng, giao thức TCP/IP, bảo mật mạng và quản trị hệ thống mạng.</p>
+                                <p class="course-deadline" style="color: #e74a3b; font-weight: 500;">Hạn đến: 10/09/2025</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 35%"></div>
+                                    <span>35% hoàn thành</span>
+                                </div>
+                                <button class="btn-submit" style="margin-top: 10px;">Vào học</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card enrolled-courses">
+                    <div class="card-header">
+                        <h3><i class="fas fa-mobile-alt"></i> CS401 - Phát triển ứng dụng di động</h3>
+                    </div>
+                    <img class="course-image" src="https://via.placeholder.com/80x80/E91E63/FFFFFF?text=CS401" alt="CS401" style="width: 80px; margin-top: 10px;">
+                    <div class="courses-list">
+                        <div class="course-item">
+                            <div class="course-info">
+                                <h4>Giảng viên: TS. Lê Văn G</h4>
+                                <p>Mô tả: Khóa học về phát triển ứng dụng di động với React Native, Flutter và các công nghệ mobile hiện đại.</p>
+                                <p class="course-deadline" style="color: #e74a3b; font-weight: 500;">Hạn đến: 25/09/2025</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 15%"></div>
+                                    <span>15% hoàn thành</span>
+                                </div>
+                                <button class="btn-submit" style="margin-top: 10px;">Vào học</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Hệ thống Quản lý Học tập - Đại học Công nghệ</p>
+            <div class="footer-links">
+                <a href="#">Về chúng tôi</a>
+                <a href="#">Hỗ trợ</a>
+                <a href="#">Chính sách bảo mật</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
